@@ -51,6 +51,6 @@ function gameLoop() {
 
   ctx.fillStyle = "white";
   ctx.fillText("Score: " + score, 10, 20);
-
+// crosshair ctx.strokeStyle = "white"; ctx.lineWidth = 2;  ctx.beginPath(); ctx.moveTo(canvas.width / 2 - 10, canvas.height / 2); ctx.lineTo(canvas.width / 2 + 10, canvas.height / 2); ctx.moveTo(canvas.width / 2, canvas.height / 2 - 10); ctx.lineTo(canvas.width / 2, canvas.height / 2 + 10); ctx.stroke();
   requestAnimationFrame(gameLoop);
 }
