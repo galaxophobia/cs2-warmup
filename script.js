@@ -44,25 +44,24 @@ canvas.onclick = (e) => {
 function gameLoop() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+  // tło testowe
+  ctx.fillStyle = "#111";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  // target
   targets.forEach(t => {
     ctx.fillStyle = "red";
     ctx.fillRect(t.x, t.y, t.size, t.size);
   });
 
+  // score
   ctx.fillStyle = "white";
-  ctx.fillText("Score: " + score, 10, 20);
+  ctx.font = "20px Arial";
+  ctx.fillText("Score: " + score, 10, 30);
 
-// crosshair
-const cx = canvas.width / 2;
-const cy = canvas.height / 2;
+  // TEST: duży zielony kwadrat na środku
+  ctx.fillStyle = "lime";
+  ctx.fillRect(canvas.width / 2 - 20, canvas.height / 2 - 20, 40, 40);
 
-ctx.fillStyle = "lime";
-
-// pozioma kreska
-ctx.fillRect(cx - 12, cy - 1, 24, 2);
-
-// pionowa kreska
-ctx.fillRect(cx - 1, cy - 12, 2, 24);
-
-requestAnimationFrame(gameLoop);
+  requestAnimationFrame(gameLoop);
 }
