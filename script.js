@@ -61,5 +61,7 @@ ctx.moveTo(canvas.width / 2 - 10, canvas.height / 2);
 ctx.lineTo(canvas.width / 2 + 10, canvas.height / 2);
 ctx.moveTo(canvas.width / 2, canvas.height / 2 - 10);
 ctx.lineTo(canvas.width / 2, canvas.height / 2 + 10);
-ctx.stroke();  requestAnimationFrame(gameLoop);
+ctx.stroke();
+
+requestAnimationFrame(gameLoop);
 }
