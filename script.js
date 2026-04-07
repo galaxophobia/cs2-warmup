@@ -53,15 +53,16 @@ function gameLoop() {
   ctx.fillText("Score: " + score, 10, 20);
 
 // crosshair
-ctx.strokeStyle = "white";
-ctx.lineWidth = 2;
+const cx = canvas.width / 2;
+const cy = canvas.height / 2;
 
-ctx.beginPath();
-ctx.moveTo(canvas.width / 2 - 10, canvas.height / 2);
-ctx.lineTo(canvas.width / 2 + 10, canvas.height / 2);
-ctx.moveTo(canvas.width / 2, canvas.height / 2 - 10);
-ctx.lineTo(canvas.width / 2, canvas.height / 2 + 10);
-ctx.stroke();
+ctx.fillStyle = "lime";
+
+// pozioma kreska
+ctx.fillRect(cx - 12, cy - 1, 24, 2);
+
+// pionowa kreska
+ctx.fillRect(cx - 1, cy - 12, 2, 24);
 
 requestAnimationFrame(gameLoop);
 }
